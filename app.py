@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 # Allow CORS for React running on localhost:8080
-CORS(app, origins=["http://localhost:9001"])
+CORS(app, origins=["love-letter-iota-jade.vercel.app"])
 
 # Use environment variable for API key, fallback to hardcoded for development
 API_KEY = os.getenv("GEMINI_API_KEY", "AIzaSyCG-zNMdeWQQkb2m8TK9Mf1i1NHfuFFCzc")
