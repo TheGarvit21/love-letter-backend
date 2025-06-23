@@ -11,7 +11,7 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 # Allow CORS for React running on localhost:8080
-CORS(app, origins=["https://love-letter-iota-jade.vercel.app/"])
+CORS(app, origins=["https://love-letter-iota-jade.vercel.app"])
 
 
 
