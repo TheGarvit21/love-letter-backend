@@ -11,7 +11,8 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 # Allow CORS for React running on localhost:8080
-CORS(app, origins=["love-letter-iota-jade.vercel.app"])
+CORS(app, origins=["http://localhost:3000", "https://love-letter-iota-jade.vercel.app"])
+
 
 # Use environment variable for API key, fallback to hardcoded for development
 API_KEY = os.getenv("GEMINI_API_KEY", "AIzaSyCG-zNMdeWQQkb2m8TK9Mf1i1NHfuFFCzc")
@@ -107,5 +108,5 @@ def health_check():
     return jsonify({"status": "healthy", "message": "Love Letter Generator API is running"})
 
 if __name__ == "__main__":
-    # Flask will run on port 5000 by default
-    app.run(debug=True, port=5000)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(debug=False, host="0.0.0.0", port=port)

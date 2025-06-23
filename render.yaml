@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: love-letter-api
+    runtime: python
+    buildCommand: ""
+    startCommand: "python app.py"
+    envVars:
+      - key: GEMINI_API_KEY
+        value: AIzaSyCG-zNMdeWQQkb2m8TK9Mf1i1NHfuFFCzc
+    plan: free
